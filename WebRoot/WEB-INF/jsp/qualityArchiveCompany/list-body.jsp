@@ -1,0 +1,26 @@
+<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+	<td>${tempBean.id}</td>
+		<td>
+		${tempBean.name}
+		</td>
+		<td>
+		${tempBean.lawPerson}
+		</td>
+		<td>
+		${tempBean.registerMoney}
+		</td>
+		<td>
+		${tempBean.address}
+		</td>
+		<td>
+		${tempBean.tradeScope}
+		</td>
+		<td>
+		${tempBean.serviceCenter}
+		</td>
+		<td>
+		${tempBean.auditStatus}
+		</td>
+		<td>
+		${useStatusMap[tempBean.status]}
+		</td>
