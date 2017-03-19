@@ -42,7 +42,7 @@ public class PrivilegeValidateInterceptor extends HandlerInterceptorAdapter {
     	"changeLocale.do",
     	"filee/viewPic.do",
     	"filee/downloadFile.do",
-    	"frontend/"
+    	"f/"
 	};
 	private static final String[] urlsWithLogin = new String[] {// 只需要登录就能拥有的权限
 		"home.do",

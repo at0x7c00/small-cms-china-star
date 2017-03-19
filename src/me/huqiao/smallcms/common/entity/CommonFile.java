@@ -223,7 +223,19 @@ public class CommonFile {
 		fileName = fileName.toLowerCase();
 		return fileName.endsWith(".mp4")
 				|| fileName.endsWith(".rmvb")
+				|| fileName.endsWith(".ogg")
+				|| fileName.endsWith(".webm")
 				||fileName.endsWith(".wmv");
+	}
+	@Transient
+	public boolean isPicture(){
+		String fileName = getExtensionName();
+		fileName = fileName.toLowerCase();
+		return fileName.endsWith(".gif")
+				|| fileName.endsWith(".png")
+				|| fileName.endsWith(".bpm")
+				|| fileName.endsWith(".jpg")
+				||fileName.endsWith(".jpeg");
 	}
 
 	@Column(name = "status", nullable = true, columnDefinition = "enum('InUse','UnUse')")
