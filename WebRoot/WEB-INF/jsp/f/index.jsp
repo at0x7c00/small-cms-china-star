@@ -8,36 +8,8 @@
   	</head>
    
   <body>
-  		<div class="big-banner">
-  			<c:if test="${(not empty siteSetting.headerPic) and siteSetting.headerPic.video}">
-	  			<div class="video-div">
-	  				<video autoplay="autoplay" loop="loop">
-	  					<source src="${basePath}resource/video/home-video-bg.mp4" type="video/mp4" >
-	  				</video>
-	  			</div>
-	  			<div class="video-div-mask"></div>
-  			</c:if>
-  		</div>
   		
-  		<div class="menu-bar" data-request="${_request_url}">
-  			<ul>
-  				<li>
-  					<div class="logo"></div>
-  				</li>
-  				<li>
-  					<a href="${basePath}f/index.do">首&nbsp;&nbsp;页</a>
-  				</li>
-  				<li>
-  					<a href="#">栏目介绍</a>
-  				</li>
-  				<li>
-  					<a href="#">企业风采</a>
-  				</li>
-  				<li>
-  					<a href="#">资&nbsp;&nbsp;讯</a>
-  				</li>
-  			</ul>
-  		</div>
+		<%@include file="/WEB-INF/jsp/f/common/header.jsp" %>
   		
   		<div class="container">
 	  		<div class="main-content">
@@ -337,29 +309,7 @@
 	  		</div>
 	  	</div>
 	  	
-	  	
-	  	
-	  	<div class="container" style="background:#000;margin:20px 0px 0px 0px;">
-	  		<div class="main-content">
-	  			<div class="module-title" style="padding-top:50px;">
-	  				<div class="module-title-div">
-	  					<div class="module-title-div-img co-red">
-	  					</div>
-	  				</div>
-	  			</div>
-	  			
-	  			<div style="text-align:center;color:#969495;font-size:12px;letter-spacing:2px;line-height:1.7em;">
-	  				邮箱/Mail<br/>
-	  				yingxiaoguanli@cctv-ppll.com
-	  			</div>
-	  			
-	  			<div style="text-align:center;margin-top:40px;padding-bottom:40px;">
-	  				<div style="width:270px;display:inline-block;margin:0px auto;">
-		  				<span class="contact-phone"></span><span class="contact-tel">400-827-1616</span>
-		  			</div> 
-	  			</div>
-	  		</div>
-	  	</div>
+	  	<%@include file="/WEB-INF/jsp/f/common/footer.jsp" %>
  		
   </body>
 </html>

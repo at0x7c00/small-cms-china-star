@@ -37,6 +37,25 @@ public class FrontendController {
 	}
 	
 	
+	@RequestMapping("column")
+	public void column(HttpServletRequest request){
+		request.setAttribute("siteSetting", siteSettingService.getSetting());
+	}
+	
+	
+	@RequestMapping("style")
+	public void style(HttpServletRequest request){
+		request.setAttribute("siteSetting", siteSettingService.getSetting());
+	}
+	
+	@RequestMapping("info")
+	public void info(HttpServletRequest request){
+		request.setAttribute("siteSetting", siteSettingService.getSetting());
+	}
+	
+	
+	
+	
 	@RequestMapping("bannerCss")
 	public ResponseEntity<String>  bannerCss(HttpServletRequest request){
 		
