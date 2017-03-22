@@ -36,7 +36,7 @@ overflow: hidden !important;
     white-space: nowrap;
     text-align: center;
     z-index:10;
-    background-color: rgba(255,255,255, 0.7);
+    background-color: rgba(0,0,0, 0.9);
     display: none;
 }
 
@@ -70,8 +70,11 @@ overflow: hidden !important;
 .xdsoft_dialog_overlay .xdsoft_dialog .xdsoft_dialog_content{
 	padding: 10px;
 	margin: 0em;
-	background: #eaeff3;
-	border: 1px solid #1d3e5c;
+	background: #000;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-top: 0px solid #ccc;
 	font-size: 12px;
 	border-bottom: 1px;
 	padding-bottom: 0;
@@ -119,16 +122,14 @@ overflow: hidden !important;
 	line-height: 21px;
 	font-weight: normal;
 	color: #fff;
-	background:url(./img/dialog-title-bg.png) repeat-x;
-	/* background-color: #eee; */
-	border: solid 1px #1d3e5c;
+	background:#000;
+	border: solid 1px #ddd;
 	cursor: default;
 	padding: 10px;
 	padding-right: 34px;
 	margin: 0em;
 	position: relative;
 	border-bottom: 0;
-	border-radius: 5px 5px 0px 0px;
 	
 /* 	background-image: -webkit-gradient(linear,0 0,0 100%,from(#1d3e5c),to(#56a5f9));
     background-image: -webkit-linear-gradient(top,#1d3e5c 0,#56a5f9 100%);
@@ -138,14 +139,12 @@ overflow: hidden !important;
     background-image: -linear-gradient(top,#1d3e5c 0,#56a5f9 100%); */
 }
 .xdsoft_dialog_overlay .xdsoft_dialog .xdsoft_dialog_buttons{
-	background: #fcfcfc;
-	border: 1px solid #1d3e5c;
+	border: 1px solid #cccccc;
 	border-top: 0;
 	text-align: center;
 	min-height: 11px;
 	padding: 0px 10px;
-	border-radius: 0px 0px 5px 5px;
-	background: #eaeff3;
+	background: #000;
 }
 
 .xdsoft_dialog_overlay .xdsoft_dialog .xdsoft_dialog_buttons .xdsoft_btn {

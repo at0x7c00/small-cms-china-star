@@ -19,3 +19,13 @@ var basePath = '${basePath}';
 
 <script src="${basePath}js/jquery/1.11.3/jquery.min.js"></script>
 <script src="${basePath}resource/f/theme/default/js/core.js"></script>
+
+
+<link rel="stylesheet" href="${basePath}js/simple-modal/css/jquery.dialog.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<script src="${basePath}js/simple-modal/js/jquery.dialog.js" type="text/javascript" charset="utf-8"></script>
+
+
+<link href="http://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">
+
+<!-- If you'd like to support IE8 -->
+<script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>

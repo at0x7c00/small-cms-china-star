@@ -22,25 +22,38 @@
 	  			</div>
 	  			
 	  			
-	  			<div class="a-style-warp">
+	  			<div class="a-style-warp" style="margin-top:30px;">
+	  			<a name="content"></a>
 	  				<div>
-	  				<c:forEach begin="1" end="9" var="x">
-	  					<div class="a-style-item index-${x%3}">
-		  					<div class="play-btn"></div>
-		  					<a href="">
-		  					<img alt="" src="${basePath}resource/f/theme/default/css/img/style-demo.png"/>
+	  				<c:forEach items="${page.list}" var="style" varStatus="x">
+	  					<div class="a-style-item index-${x.count%3}">
+		  					<div class="play-btn" data-styleid="${style.manageKey}"></div>
+		  					<a href="javascript:void(0);" data-styleid="${style.manageKey}">
+		  					<c:choose>
+		  						<c:when test="${empty style.cover }">
+				  					<img alt="" src="${basePath}resource/f/theme/default/css/img/style-demo.png"/>
+		  						</c:when>
+		  						<c:otherwise>
+				  					<img alt="" src="${basePath}filee/viewPic.do?manageKey=${style.cover.manageKey}"/>
+		  						</c:otherwise>
+		  					</c:choose>
 		  					</a>
-		  					<a href="#">
-		  					<span class="a-style-title">激发智慧无限潜能</span>
+		  					<a href="javascript:void(0);" data-styleid="${style.manageKey}">
+		  					<span class="a-style-title">
+		  					<n:shorthand length="15" content="${style.title}"></n:shorthand>
+		  					</span>
 		  					</a>
-		  					<span class="a-style-sub-title">无锡云尚优课教育咨询有限公司</span>
+		  					<span class="a-style-sub-title"><n:shorthand length="15" content="${style.corporateName}"></n:shorthand></span>
 		  				</div>
 	  				</c:forEach>
 	  				</div>
 	  			</div>
 	  			
-	  			
-		  		
+	  			<div>
+					<jsp:include page="/WEB-INF/jsp/f/common/pageBar.jsp">
+						<jsp:param value="f/style.do" name="url"/>
+					</jsp:include>	
+	  			</div>
 	  		</div>
 	  		
   		</div>

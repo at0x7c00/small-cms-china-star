@@ -1,5 +1,7 @@
 package me.huqiao.smallcms.chinastar.entity;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,6 +19,7 @@ import javax.persistence.Transient;
 import me.huqiao.smallcms.common.entity.CommonFile;
 import me.huqiao.smallcms.common.entity.enumtype.UseStatus;
 import me.huqiao.smallcms.sys.entity.User;
+import me.huqiao.smallcms.util.StringUtil;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.hibernate.annotations.Fetch;
@@ -331,4 +334,31 @@ public UseStatus getStatus(){
 	public String toString() {
 		return "Information [manageKey=" + manageKey + "]";
 	}
+	@Transient
+	public String getAbstractContent(){
+		return delHTMLTag(getContent());
+	}
+	
+	public static String delHTMLTag(String htmlStr){ 
+		if(StringUtil.isEmpty(htmlStr)){
+			return htmlStr;
+		}
+        String regEx_script="<script[^>]*?>[\\s\\S]*?<\\/script>"; //定义script的正则表达式 
+        String regEx_style="<style[^>]*?>[\\s\\S]*?<\\/style>"; //定义style的正则表达式 
+        String regEx_html="<[^>]+>"; //定义HTML标签的正则表达式 
+         
+        Pattern p_script=Pattern.compile(regEx_script,Pattern.CASE_INSENSITIVE); 
+        Matcher m_script=p_script.matcher(htmlStr); 
+        htmlStr=m_script.replaceAll(""); //过滤script标签 
+         
+        Pattern p_style=Pattern.compile(regEx_style,Pattern.CASE_INSENSITIVE); 
+        Matcher m_style=p_style.matcher(htmlStr); 
+        htmlStr=m_style.replaceAll(""); //过滤style标签 
+         
+        Pattern p_html=Pattern.compile(regEx_html,Pattern.CASE_INSENSITIVE); 
+        Matcher m_html=p_html.matcher(htmlStr); 
+        htmlStr=m_html.replaceAll(""); //过滤html标签 
+
+        return htmlStr.trim(); //返回文本字符串 
+    }
 }

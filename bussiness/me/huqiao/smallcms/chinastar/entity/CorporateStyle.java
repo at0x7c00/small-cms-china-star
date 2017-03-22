@@ -76,6 +76,11 @@ private Integer orderNumStart;
 private Integer orderNumEnd;
 /**状态*/
 private UseStatus status;
+
+/**封面*/
+private CommonFile cover;
+
+
 	/**MD5管理ID*/
 	protected String manageKey;
 	/**@return String MD5管理ID */
@@ -345,5 +350,22 @@ public UseStatus getStatus(){
 	@Override
 	public String toString() {
 		return "CorporateStyle [manageKey=" + manageKey + "]";
+	}
+	
+	/**
+	 * @param cover 要设置的封面
+	 */
+	public void setCover(CommonFile cover){
+	    this.cover = cover;
+	}
+	/**
+	 * @return CommonFile 封面 
+	 */
+	@ManyToOne(targetEntity=me.huqiao.smallcms.common.entity.CommonFile.class,fetch=FetchType.LAZY)
+	@JoinColumn(name="cover_file_id",nullable=true)
+	@Fetch(FetchMode.SELECT)
+	@JsonIgnore
+	public CommonFile getCover(){
+			return this.cover;	
 	}
 }

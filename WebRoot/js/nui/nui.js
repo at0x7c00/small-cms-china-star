@@ -387,6 +387,7 @@ function initUI(panelType){
 		language: 'zh-cn' //简体中文
 	});
     
+    
 }
 
 function loadProvinces(areaKey){

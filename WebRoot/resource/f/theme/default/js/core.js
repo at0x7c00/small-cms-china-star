@@ -1,6 +1,9 @@
 $(function(){
 	
 	var requst = $(".menu-bar").first().data("request");
+	if(requst=='f/info-view.do'){
+		requst = 'f/info.do';
+	}
 	$(".menu-bar a").each(function(){
 		var _this = $(this);
 		var href = _this.attr("href");
@@ -12,6 +15,17 @@ $(function(){
 		}
 	});
 	
+	
+    $("[data-styleid]").click(function(){
+    	var key = $(this).attr("data-styleid");
+    	$.get(basePath + 'f/style-view.do?key='+ key,function(d){
+    		$(d).dialog({
+    			title:''
+    		});
+    		
+    		videojs("my-video")
+    	});
+    });
 });
 
 

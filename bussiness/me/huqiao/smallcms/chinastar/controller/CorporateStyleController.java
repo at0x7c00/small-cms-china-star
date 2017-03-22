@@ -135,6 +135,7 @@ request.setAttribute("useStatusMap",UseStatus.useStatusMap);
     	corporateStyle.setCreateTime(new Date());
     	corporateStyle.setUpdateTime(corporateStyle.getCreateTime());
 		corporateStyle.setVideo(parseFilee(request,"videoKeys",null));
+		corporateStyle.setCover(parseFilee(request,"coverKeys",null));
 		corporateStyle.setManageKey(Md5Util.getManageKey());
     	corporateStyleService.add(corporateStyle);
         jsonResult.setMessage(getI18NMessage(request, "base.common.controller.operate.add.success"));
@@ -180,6 +181,13 @@ request.setAttribute("useStatusMap",UseStatus.useStatusMap);
 			oldKey = corporateStyle.getVideo().getManageKey();
 		}
 		corporateStyle.setVideo(parseFilee(request,"videoKeys",oldKey));
+		
+		String oldKey2 = null; 
+		if(corporateStyle.getCover()!=null){
+			oldKey2 = corporateStyle.getCover().getManageKey();
+		}
+		corporateStyle.setCover(parseFilee(request,"coverKeys",oldKey2));
+		
 		
         corporateStyleService.update(corporateStyle);
         jsonResult.setMessage(getI18NMessage(request, "base.common.controller.operate.update.success"));
@@ -237,6 +245,7 @@ request.setAttribute("useStatusMap",UseStatus.useStatusMap);
 			 try {
     			corporateStyle = corporateStyleService.getEntityByProperty(CorporateStyle.class,"manageKey",manageKey);
     			markFileAsUnuse(corporateStyle.getVideo());
+    			markFileAsUnuse(corporateStyle.getCover());
     			corporateStyleService.delete(corporateStyle);
 			}catch (RuntimeException re) {
 				jsonResult.setMessage(getI18NMessage(request, "base.common.controller.operate.delete.inuse"));
