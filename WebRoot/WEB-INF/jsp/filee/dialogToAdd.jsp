@@ -9,7 +9,7 @@
 						<form action="${basePath}filee/add.do" class="attachement-dropzone dropzone" 
 						data-selectlist="${selectlist}" 
 						data-formtargetpanel = "${formTargetPanel }"
-						data-maxfilesize = "${maxFilesize }"
+						data-maxfilesize = "30000"
 						data-acceptedfiles = "${acceptedFiles }"
 						>
 							<input type="hidden" name="folderId" value="1" />
@@ -20,4 +20,5 @@
 		</article>
 	</div>
 </section>
+<%--${maxFilesize } --%>
 <%@include file="/WEB-INF/jsp/common/pageSetJS.jsp"%>

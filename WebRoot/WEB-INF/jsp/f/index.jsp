@@ -149,7 +149,9 @@
 		  							<td>
 		  								<div class="time-content">
 			  								<span class="time-title">
+			  								<a href="${basePath}f/info-view.do?key=${info.manageKey}" target="_blank">
 			  								<n:shorthand length="26" content="${info.title}"></n:shorthand>
+			  								</a>
 			  								</span>
 			  								<span class="time-detail">
 			  									<n:shorthand length="33" content="${info.abstractContent}"></n:shorthand>
